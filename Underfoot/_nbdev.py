@@ -9,6 +9,6 @@ modules = ["core.py"]
 
 doc_url = "https://gsilvers.github.io/Underfoot/"
 
-git_url = "https://github.com/gsilvers/Underfoot/tree/main/"
+git_url = "https://github.com/gsilvers/Underfoot/tree/master/"
 
 def custom_doc_links(name): return None
