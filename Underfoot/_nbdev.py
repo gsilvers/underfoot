@@ -7,8 +7,8 @@ index = {"say_hello": "00_core.ipynb",
 
 modules = ["core.py"]
 
-doc_url = "https://gsilvers.github.io/underfoot/"
+doc_url = "https://gsilvers.github.io/Underfoot/"
 
-git_url = "https://github.com/gsilvers/underfoot/tree/main/"
+git_url = "https://github.com/gsilvers/Underfoot/tree/main/"
 
 def custom_doc_links(name): return None
