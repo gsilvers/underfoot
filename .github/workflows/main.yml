@@ -11,7 +11,7 @@ jobs:
         architecture: 'x64'
     - name: install libgl for pygame
       run: |
-        sudo apt-get install python3-pygame
+        sudo apt-get install libsdl2-2.0
     - name: Install the library
       run: |
         pip install nbdev jupyter
