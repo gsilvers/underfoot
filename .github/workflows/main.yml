@@ -11,6 +11,9 @@ jobs:
         architecture: 'x64'
     - name: install libgl for pygame
       run: |
+        sudo dpkg --add-architecture i386
+        sudo apt-get update
+        sudo apt-get install ia32-libs
         sudo apt-get install ia32-libs-sdl
     - name: Install the library
       run: |
