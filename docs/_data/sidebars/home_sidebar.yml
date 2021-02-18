@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: Underfoot
       url: core.html
+    - output: web,pdf
+      title: Class current_board
+      url: current_board.html
     output: web
     title: Underfoot
   output: web

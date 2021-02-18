@@ -9,6 +9,8 @@
 _tmp*
 tmp*
 tags
+notes.md
+TODO
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

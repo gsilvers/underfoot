@@ -1,5 +1,5 @@
 # Underfoot
-> Link to Documentation: <a href='https://gsilvers.github.io/Underfoot/'>Docs</a>
+> Underfoot is a 2D game built on top of the pygame library about a dog and her human best friend. This game is developed on top of NBDev and Jupyter. To start I am simply running throught the NBDev Tutorial and maybe testing some pygame.
 
 
 This file will become your README and also the index of your documentation.

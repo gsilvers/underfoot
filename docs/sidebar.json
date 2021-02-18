@@ -1,6 +1,7 @@
 {
   "Underfoot": {
     "Overview": "/",
-    "Underfoot": "core.html"
+    "Underfoot": "core.html",
+    "Class current_board": "current_board.html"
   }
 }
