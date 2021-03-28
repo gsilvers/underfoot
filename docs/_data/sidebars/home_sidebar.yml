@@ -15,6 +15,12 @@ entries:
     - output: web,pdf
       title: Class current_board
       url: current_board.html
+    - output: web,pdf
+      title: Title
+      url: pygame_learning.html
+    - output: web,pdf
+      title: Underfoot Notes
+      url: notes.html
     output: web
     title: Underfoot
   output: web

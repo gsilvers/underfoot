@@ -3,9 +3,22 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"say_hello": "00_core.ipynb",
-         "HelloSayer": "00_core.ipynb"}
+         "HelloSayer": "00_core.ipynb",
+         "pygame_learning": "02_pygame_learning.ipynb",
+         "game_actor": "02_pygame_learning.ipynb",
+         "draw_window": "02_pygame_learning.ipynb",
+         "colide_animation": "02_pygame_learning.ipynb",
+         "handle_player_movement": "02_pygame_learning.ipynb",
+         "main": "02_pygame_learning.ipynb",
+         "VELO": "02_pygame_learning.ipynb",
+         "WHITE": "02_pygame_learning.ipynb",
+         "NICE_ORANGE": "02_pygame_learning.ipynb",
+         "main_window": "02_pygame_learning.ipynb",
+         "FPS": "02_pygame_learning.ipynb",
+         "NOGO": "02_pygame_learning.ipynb"}
 
-modules = ["core.py"]
+modules = ["core.py",
+           "pygame_learning.py"]
 
 doc_url = "https://gsilvers.github.io/Underfoot/"
 

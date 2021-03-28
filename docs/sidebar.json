@@ -2,6 +2,8 @@
   "Underfoot": {
     "Overview": "/",
     "Underfoot": "core.html",
-    "Class current_board": "current_board.html"
+    "Class current_board": "current_board.html",
+    "Title": "pygame_learning.html",
+    "Underfoot Notes": "notes.html"
   }
 }
