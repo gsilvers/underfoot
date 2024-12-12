@@ -1,0 +1,6 @@
+* Underfoot
+
+Welcome to the underfoot project. This is home of a future game written in Love2D dedicated to my wonderful pupper:
+
+#+CAPTION: This is an image of my dog
+[[./resources/molly_actual.png]]
