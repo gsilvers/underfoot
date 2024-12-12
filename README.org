@@ -4,3 +4,20 @@ Welcome to the underfoot project. This is home of a future game written in Love2
 
 #+CAPTION: This is an image of my dog
 [[./resources/molly_actual.png]]
+
+* Underlying Technologies
+
+This is a little TBD but I intend to use this project as a way to learn and enjoy some simpler tools. Work me does a ton using AWS and modern web frameworks and a change would be refreshing.
+
+** LUA
+[[https://www.lua.org][Link]] is a simple langauge designed for embedding. 
+
+** Love2D
+[[https://love2d.org/wiki/Main_Page][Link]] is a simplified game engine tool for use in LUA.
+
+** Fennel
+[[https://fennel-lang.org][link]] is a lisp that compiles into LUA. I have been hankering to use a lisp or lisp like at work with little avail. I get to play with emacs for my day to day needs but I want to ship something with a lisp and here's my outlet.
+
+* Contributing ETC
+
+I'm planning to release this game fully open source including the assets. I hope to find some free resources to start since I am not exactly an artist. While it's mostly for me to learn if folks want to open PR's that's awesome too. For now I'll review and merge PR's as I see fit. License for this repo is TBD but it will be GPL'd of some sort.
