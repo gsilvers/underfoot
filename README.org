@@ -16,7 +16,7 @@ This is a little TBD but I intend to use this project as a way to learn and enjo
 [[https://love2d.org/wiki/Main_Page][Link]] is a simplified game engine tool for use in LUA.
 
 ** Fennel
-[[https://fennel-lang.org][link]] is a lisp that compiles into LUA. I have been hankering to use a lisp or lisp like at work with little avail. I get to play with emacs for my day to day needs but I want to ship something with a lisp and here's my outlet.
+[[https://fennel-lang.org][Link]] is a lisp that compiles into LUA. I have been hankering to use a lisp or lisp like at work with little avail. I get to play with emacs for my day to day needs but I want to ship something with a lisp and here's my outlet.
 
 * Contributing ETC
 
