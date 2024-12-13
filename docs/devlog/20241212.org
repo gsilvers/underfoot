@@ -1,0 +1,34 @@
+* Just some ideas.
+
+Overall I have fuck all experience making a game, but as an engineer I really love ensuring there's documentation and understanding. SO my goal here is to document the learning I do and hope it helps others learn to code games.
+
+* The stack
+
+Overall I'm mostly choosing Love2d knowing that it was used to ship something like [[https://store.steampowered.com/app/2379780/Balatro/][Balatro]] the game has depth, runs smoothly and seems to run almost everywhere. I also like the idea of a small simple stack I can manipulate directly. I think learning on something like unity is not for me.
+
+There is also a lisp targeting this stack that should let me explore a fun mix of interop between LUA and Fennel.
+
+* Today
+
+I'm not doing much I'm just going to learn how to hello world this stack from LUA. I think this should be pretty easy.
+
+Installing lua and love2d on macos are easy and can be done just using brew.
+
+#+begin_src bash
+  brew install lua
+  brew install --cask love
+#+end_src
+
+This is nice and simple, there does not seem to be any crazy overhead like maintaining python versions via pyenv or virtual environments.
+
+I'm honestly not sure at this point if there are even lua packages to install. More to come I guess.
+
+Anyway running love games seems easy It looks like there's two paths, one to run via a interpreter and then it seems like there's also compilation.
+
+To run a game follwing this [[https://love2d.org/wiki/Getting_Started][start here]] guide love basically looks for a main.lua that needs to have a love.draw function and off you go.
+
+In terms of doing this you can probably just do a love src/. I suppose lets see.
+
+As expected this just works. I'm guessing I can use something like [[https://www.gnu.org/software/make/][gnu make]] to coordinate these common tasks and builds over itme.
+
+I think that's about it for today a quick 20 minutes of getting familiar. A quick hello world and a makefile start.
