@@ -1,0 +1,68 @@
+* Chapter 1
+
+Thus far today is just running through [[https://rvagamejams.com/learn2love/pages/01-04-using-functions.html][this lua tutorial]] around love2d. I'm just toying around in a repl in vterm. I'm not sure if I will get anything special set up for emacs or what. LUA seems pretty simple, functions are registered in some sort of internal memory model.
+
+functions can be stacked but not chained.
+
+seems like you don't import the stdlib its just name spaced IE string.reverse rather than from string import reverse etc.
+
+interestingly you can assign inline functions to names like javascript ie
+
+#+begin_src lua
+some_name = function()
+  -- function def
+end
+#+end_src
+
+mostly though lua seems like people claim it to be. It's a simple scripting language without OOP directly built in although I guess you could do something with tables if you wanted.
+
+Looks like its old style like python pre-3.10 with no case / matching and only if statements.
+
+Lua does have type checking at runtime, you can do type(x) and get it back. The response to the type is a simple string not some fancy object IE
+
+#+begin_src lua
+  type(name) == "string" --true
+  type(type(12)) --string
+#+end_src
+
+there are simple conversions like tonumber and tostring. LUA has a table / map object called tables. Syntax is simple
+
+#+begin_src lua
+  my_cool_table = {}
+#+end_src
+
+Tables are used for both lists and dicts and the difference is basically what the keys are. EG a list is:
+
+#+begin_src lua
+    groceries = {
+    [1] = "beans",
+    [2] = "bananas",
+    [3] = "buns"
+  }
+
+    print(groceries[1])
+#+end_src
+
+While a map or dict is more like this:
+
+#+begin_src lua
+      coins = {
+      ["half"] = "50 cents",
+      ["quarter"] = "25 cents",
+      ["dime"] = "10 cents",
+      ["nickel"] = "5 cents",
+      ["penny"] = "1 cent"
+    }
+  print(coins["nickel"])
+  print(coins.nickel)
+      
+#+end_src
+
+Tables have a magic operator to get length # ie #coins would be 5
+
+Nothing fancy needed to get .notation as long as your keys are strings. Ranges are implied I guess you could say in that you can say for number = 1,10 do to get a range of 1 to 10 inclusive.
+
+
+* Chapter 2
+
+Starts off b y explaining that love creates a table object of itself before running your code. It has a draw key which is empty untill you define it in your main.lua.
