@@ -1,0 +1,21 @@
+* Delta Time
+
+Well after a few days off for the weekend I'm continuing with the lesson on this page [[https://rvagamejams.com/learn2love/pages/02-05-delta-time.html][about delta time]].
+
+The section starts out with an example trying to get me to define a love.update function I'm guessing to show that this is the behind the scenes loop that happens each iteration?
+
+Yep after adding the print time it shows how long it took it to do each cycle.
+
+It seems pretty simple in a seperation of concerns way, there's the love.update where you put any "model" or "controller" code while the love.draw does the view updates.
+
+Implementation of these of course seems loose. With no formal OO for example there seems to be no requirement that you can't add stateful stuff in the draw method and break this paradigm.
+
+* Maps
+
+THe next section goes really simply over the map / dictionary table type in llua. It does a quick ask and response example of coins to value. It hten shows using  amap to store key to function from our main loop earlier without explaining why this is good.
+
+Of course abstracting things out and setting up a small keypress.map.apply type syntax to say hey "i handled key presses here" is nice but its not explained.
+
+* THe world
+
+Ok now we're into game shit. We're talking about entitys in the way the author uses them
