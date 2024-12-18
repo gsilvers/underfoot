@@ -1,47 +1,53 @@
 
-local current_color = {1, 1, 1, 1}
-local seconds = 0
+local world = love.physics.newWorld(0, 100)
+
+-- Triangle is the name of our first entity
+local triangle = {}
+triangle.body = love.physics.newBody(world, 200, 200, 'dynamic')
+-- Give the triangle some weight
+triangle.body.setMass(triangle.body, 32)
+triangle.shape = love.physics.newPolygonShape(100, 100, 200, 100, 200, 200)
+triangle.fixture = love.physics.newFixture(triangle.body, triangle.shape)
+triangle.fixture:setRestitution(0.75)
+
+-- Another entity
+local bar = {}
+bar.body = love.physics.newBody(world, 200, 450, 'static')
+bar.shape = love.physics.newPolygonShape(0, 0, 0, 20, 400, 20, 400, 0)
+bar.fixture = love.physics.newFixture(bar.body, bar.shape)
+
+
+-- Boolean to keep track of whether our game is paused or not
+local paused = false
 
 local key_map = {
-  b = function()
-    current_color = {0, 0, 1, 1} -- Blue
-  end,
-  g = function()
-    current_color = {0, 1, 0, 1} -- Green
-  end,
-  r = function()
-    current_color = {1, 0, 0, 1} -- Red
-  end,
-  w = function()
-    current_color = {1, 1, 1, 1} -- White
-  end,
-  escape = function()
-    love.event.quit()
-  end
+   escape = function()
+      love.event.quit()
+   end,
+   space = function()
+      paused = not paused
+   end
 }
 
 love.draw = function()
-  local square = {100, 100, 100, 200, 200, 200, 200, 100}
-
-  -- Print a counter clock
-  local clock_display = 'Seconds: ' .. math.floor(seconds)
-  love.graphics.print(clock_display, 0, 0, 0, 2, 2)
-
-  -- Initialize the square with the default color (white)
-  love.graphics.setColor(current_color)
-  love.graphics.polygon('fill', square)
+   love.graphics.polygon('line', triangle.body:getWorldPoints(triangle.shape:getPoints()))
+   love.graphics.polygon('line', bar.body:getWorldPoints(bar.shape:getPoints()))
 end
 
-
 love.keypressed = function(pressed_key)
-  -- Check in the key map if there is a function
-  -- that matches this pressed key's name
-  if key_map[pressed_key] then
-    key_map[pressed_key]()
-  end
+   -- Check in the key map if there is a function
+   -- that matches this pressed key's name
+   if key_map[pressed_key] then
+      key_map[pressed_key]()
+   end
 end
 
 love.update = function(dt)
-  -- Add up all the delta time as we get it
-  seconds = seconds + dt
+   -- Note that this : syntax is kind of shorthand to avoid
+   -- having to put selfs manually into table function calls
+   -- its in a way the syntax for methods rather than functions
+   if not paused then
+      world:update(dt)
+   end
 end
+

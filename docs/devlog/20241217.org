@@ -1,0 +1,95 @@
+* Entities
+
+Continuing from yesterday on this [[https://rvagamejams.com/learn2love/pages/02-07-the-world.html][page]] it seems like the Love engine has its own idea of entities that it tracks in its own world object.
+
+In copy pasting this lesson and working with it its obvious love has some in build object prototypes that world inherits. There is a body, which gets created at a position. You can then set its mass, shape.
+
+It seems like mass triggers an inbuild game engine based physics. This probably is not going to be super helpful to me unless I do some side scroller-ey levels.
+
+It seems like the main function of this object system is a pre-built way to get motion and maybe even collisions figured out. You set the trigangles mass and then you can call getPoints to get the matrix of vertexes of the triangle at any time.
+
+#+begin_src lua
+  -- Function using a table for kwargs
+  function greet(kwargs)
+     local name = kwargs.name or "Stranger"
+     local age = kwargs.age or "unknown"
+     print("Hello, " .. name .. "! Your age is " .. age .. ".")
+  end
+
+  -- Calling with explicit kwargs
+  greet({name = "Alice", age = 30})
+  greet({age = 25, name = "Bob"})  
+#+end_src
+
+Geting this to work would require wrapping things like this:
+
+#+begin_src lua
+    -- Wrapper function for newWorld with kwargs
+    function newWorldWithKwargs(kwargs)
+       -- Extract values from the kwargs table
+       local xg = kwargs.xg or 0  -- Default to 0 if not provided
+       local yg = kwargs.yg or 0  -- Default to 0 if not provided
+
+       -- Call the original function
+       return love.physics.newWorld(xg, yg)
+    end
+
+    -- Using the wrapper with kwargs
+    local world = newWorldWithKwargs({xg = 0, yg = 100})
+#+end_src
+
+This is not awful. I could do this any time I use lua primitives to add my own wrapper logic. It could be cool if there was more metaprogramming even a simple decorator syntax to do this but this could work well enough.
+
+* Documentation
+
+The next section skips to documentation which is kinda weird. It obviously states "bookmark the docs" and points to reading about the newbody and fixture methods we used earlier. One thing that will be interesting is Love2d is not distributed as a LUA library instead its an entire executable. The docs then may be hard to get. There's no IMPORT LOVE or similar to get love there. Love.x just exists by nature of the runtime.
+
+I will need to do some searching to find out what sort of LSP or completion engines exist. Likewise its not clear if there's any way to directly access the runnign env.
+
+It looks like a lua [[https://github.com/LuaLS/lua-language-server?tab=readme-ov-file][lsp]] project exists including support for libraries like love2d. I think at this point I'm going to take a diversion here to get this set up and take notes. Some of this code will end up in my emacs config I'm sure but I'll try to document here as well.
+
+* Lua LSP
+
+** Installation
+
+Well homebrew to the rescue it seems brew rolls a install under
+
+#+begin_src bash
+  brew install lua-language-server 
+#+end_src
+
+The next step for this is going to be adding it to my emacs LSP config. Because I'm using built in eglot all I basically have been doing here is adding some hooks ie:
+
+#+begin_src emacs-lisp
+        (use-package eglot
+        :defer t
+        :bind (:map eglot-mode-map
+                    ("C-c l a" . eglot-code-actions)
+                    ("C-c l r" . eglot-rename)
+                    ("C-c l f" . eglot-format)
+                    ("C-c l d" . eldoc))
+        :custom (eglot-report-progress nil)
+        :config
+        (setq read-process-output-max (* 1024 1024))
+        (setq eglot-events-buffer-size 0)
+        :hook
+        ((python-mode . eglot-ensure)
+         (lua-mode . eglot-ensure)))
+
+      (use-package breadcrumb
+        :config (breadcrumb-mode))
+#+end_src
+
+
+And this pretty much works BUT love2d is not incuded. This is going to be a config for the lsp itself. I'm sure I can probably pack this into Eglot globally for the lsp but I think I'd rather it by directory in case I use LUA with LOVE2D or if I hop into vs code in there. This looks like all we need to do is add a .luarc.json file in our project.
+
+A base file is provided:
+
+#+begin_src javascript
+  {
+      "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+      "workspace.library": ["path/to/library/directory"],
+      "runtime.version": "Lua 5.3",
+      "hint.enable": false
+  }
+#+end_src
