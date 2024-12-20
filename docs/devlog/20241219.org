@@ -1,0 +1,14 @@
+* Modules and organization
+
+So imports seem pretty simple. Files must return a thing. And then you asign an object = require('thefilewithoutextension').  If things are in directories its the same as their file path IE require('path/to/myfile').
+
+Its having us move our world to a world.lua
+
+
+* Collision Callbacks
+
+The next idea is how two entities in the game interact with one another. The example I guess is showing that there are four handler functions called whenever two entities collide.
+
+It does not seem like entities can cross over, at least as i understand them yet. It does seem trivial to use begin and end contact handlers to do things like total up a score or play a sound.
+
+THe method to understanding which entity is which is pretty interesting. You can use the fixtures method getUserData to get its name. 

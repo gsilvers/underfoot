@@ -1,5 +1,5 @@
 
-local world = love.physics.newWorld(0, 100)
+local world = require('world')
 
 -- Triangle is the name of our first entity
 local triangle = {}
