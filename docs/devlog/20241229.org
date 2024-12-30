@@ -1,0 +1,27 @@
+* Back At it
+
+Over the holiday week I got very little done here. I spent alot of time working sadly and then mixed with gaming and activities with my fam. Getting out of a stall is tough. I've gotten through some of the basics of a LUA tutorial and understand its OO facility. I also have read about Fennel a bit and I'm wondering if getting started making the game is the next move and then get back to learning specifics if I get stuck.
+
+* Setup
+
+The first thing I suppose is to get this repo into shape to run code and iterate. I know the very first thing I want to get working is a level selector by which there's some sort of menu and then an ability to select new sets of binds and love2d "worlds" based upon this.
+
+I'm reading a few things mainly starting with this [[https://git.sr.ht/~technomancy/exo-encounter-667][project]] from a lisp game jam where the developer had an interactive repl set up to run their fennel code inside their "running" love2d game.
+
+It seems like it just uses a thread to listen to and update the running environment with the code that that has been read in. What is cool is they seem to be able to use arbitary lua libraries like this [[https://github.com/kikito/bump.lua][bump]] library for colisions within their repo. There appears to be a LUA package manager [[https://luarocks.org][luarocks]] but I'm unclear if it plays well with fennel. I'm checking through that now.
+
+* Misc
+
+I read a little about this [[https://love2d.org/wiki/Tiled][tiled]] tile editor tool for laying out maps with a renderer thats available in love2d.
+
+In reading further this "absolute minimal" scaffold [[https://sr.ht/~benthor/absolutely-minimal-love2d-fennel/][repo]] seems to give the simplest and best outline here. It seems to use fennel as a library rather than a systme run one.
+
+* Next Steps
+
+My first goal is to get a basic running game, documentation and instructions to clone and run all out there. I'd like to be able to:
+
+- Given a computer with love, git and emacs provide the user instructions to clone the game and start it including having an interactive repl.
+- Be able to evaluate lisp/fennel code and change game behavior while the game is running.
+- Select from two "levels"
+  - Level 1 you move a square around using asdf
+  - Level 2 you move a circle around using esdf (wasd shifted right one key)
