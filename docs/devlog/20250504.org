@@ -1,0 +1,5 @@
+* A continuation
+
+As is par for the course with things. This has sat for a while. Today I'm cleaning up and removing some old extraneous code from previous lessons and making a real go of this. I'll be using this [[https://gitlab.com/alexjgriffith/min-love2d-fennel/][project]] to bootstrap the repo to run love2d and fennel.
+
+The repo's install script is a bit janky it expects no or an empty directory and then just coppies things I'll just use copy commands manually.
